@@ -1,0 +1,16 @@
+<div class="container mt-4" *ngIf="urlDetails">
+  <h2>Details URL</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="urlDetails">
+    <p><strong>Original URL:</strong> {{ urlDetails.originalUrl }}</p>
+    <p><strong>Shortened URL:</strong> {{ urlDetails.shortenedUrl }}</p>
+    <p><strong>Created at:</strong> {{ urlDetails.createdAt | date: 'short' }}</p>
+    <p><strong>Created by:</strong> {{ urlDetails.createdBy.email }}</p>
+  </div>
+
+  <a class="btn btn-primary mt-3" routerLink="/">Back to table URL</a>
+</div>

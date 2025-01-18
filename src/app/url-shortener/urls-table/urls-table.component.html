@@ -1,0 +1,23 @@
+<a *ngIf="localStorage.getItem('email') != null" class="btn btn-success mb-3" routerLink="/add-url">Додати новий URL</a>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Original URL</th>
+    <th scope="col">Shortened URL</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let url of urlsList">
+    <th scope="row">{{ url.id }}</th>
+    <td><a href="{{ url.originalUrl }}" target="_blank">{{ url.originalUrl }}</a></td>
+    <td><a href="{{ url.shortenedUrl }}" target="_blank">{{ url.shortenedUrl }}</a></td>
+    <td>
+      <button *ngIf="localStorage.getItem('email')" class="btn btn-info" [routerLink]="['/url-info', url.id]">Show</button>
+      <button *ngIf="localStorage.getItem('email') === url.createdBy.email || isAdmin" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

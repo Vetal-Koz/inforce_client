@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h2>Edit About Information</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <form (ngSubmit)="saveChanges()">
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea id="content" class="form-control" [(ngModel)]="aboutInfo.content" name="content" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
+    <button class="btn btn-secondary mt-3" [routerLink]="['/about-info', aboutInfo.id]">Cancel</button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<h2>Add new URL</h2>
+
+<div class="form-group">
+  <label for="originalUrl">Original URL</label>
+  <input
+    type="url"
+    id="originalUrl"
+    [(ngModel)]="originalUrl"
+    class="form-control"
+    placeholder="Введіть URL"
+  />
+</div>
+
+<button (click)="addUrl()" class="btn btn-primary mt-3">Add URL</button>
+
+<div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>

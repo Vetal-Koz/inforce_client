@@ -1,0 +1,15 @@
+<div class="container mt-4" *ngIf="aboutInfo">
+  <h2>About Information</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="aboutInfo">
+    <p>{{ aboutInfo.content }}</p>
+  </div>
+
+  <button *ngIf="isAdmin" class="btn btn-primary mt-3" [routerLink]="['/about-info-edit']">
+    Edit
+  </button>
+</div>
