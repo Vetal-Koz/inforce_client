@@ -3,7 +3,7 @@ import {ShortenerService} from "../../services/shortener.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-urls-infp',
+  selector: 'app-urls-info',
   templateUrl: './urls-info.component.html',
   styleUrl: './urls-info.component.css'
 })
